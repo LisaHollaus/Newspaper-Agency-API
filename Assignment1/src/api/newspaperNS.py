@@ -149,7 +149,7 @@ class NewspaperIssueID(Resource):
     def post(self, paper_id, issue_id):
         targeted_paper = Agency.get_instance().get_newspaper(paper_id)
         if not targeted_paper:
-            abort(404, f"Newspaper with ID {paper_id} was not found")  # does not work because it expects to send the aper_model?
+            abort(404, f"Newspaper with ID {paper_id} was not found")  # does not work because it expects to send the paper_model?
         issue = Agency.get_instance().get_issue(targeted_paper, issue_id)
         if not issue:
             abort(404, f"Issue with ID {issue_id} was not found")
@@ -237,7 +237,3 @@ class NewspaperStatsID(Resource):
             abort(404, f"Newspaper with ID {paper_id} was not found")
         info = Agency.get_instance().newspaper_stats(targeted_paper)
         return info
-
-
-
-

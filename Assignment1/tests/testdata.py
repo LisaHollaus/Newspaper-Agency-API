@@ -6,7 +6,7 @@ from ..src.model.issue import Issue
 
 
 def create_newspapers(agency: Agency):
-    paper1 = Newspaper(paper_id=100, name="The New York Times", frequency=7, price=13.14)  # all testdata issues are publicated to this newspaper # updated by test_update_newspaper
+    paper1 = Newspaper(paper_id=100, name="The New York Times", frequency=7, price=13.14)  # all testdata issues are added to this newspaper # updated by test_update_newspaper
     paper2 = Newspaper(paper_id=101, name="Heute", frequency=1, price=1.12)  # updated by test_update_newspaper
     paper3 = Newspaper(paper_id=115, name="Wall Street Journal", frequency=1, price=3.00)  # issue 1 & 2 added by test_post_add_issues and test_check_missingissues
     paper4 = Newspaper(paper_id=125, name="National Geographic", frequency=30, price=34.00)  # deleted by test_delete_newspaper
@@ -42,7 +42,7 @@ def create_subscribers(agency: Agency):  # for simplicity, I just added first na
     subscriber4 = Subscriber(ID=150, name="Emilia", address="Mamuthallee 35")  # updated by test_post_update_subscriber  # subscribed to paper_id 115 by test_check_missingissues
     subscriber5 = Subscriber(ID=160, name="Emanuel", address="Treestreet 36")  # subscribed to paper_id 100 by test_post_subscribe_to_a_newspaper
     subscriber6 = Subscriber(ID=170, name="Alisa", address="Flowerstreet 37")  # subscribed to paper_id 135 by test_get_check_missingissues  # not subscribed to paper_id 100 for test_deliver_issue_without_subscription
-    subscriber7 = Subscriber(ID=180, name="Alfred", address="Flowerstreet 37")  # subscribed to paper_id 100 and delivered isssue_id 92 by test_deliver_issue
+    subscriber7 = Subscriber(ID=180, name="Alfred", address="Flowerstreet 37")  # subscribed to paper_id 100 and delivered issue_id 92 by test_deliver_issue
     agency.subscribers.extend([subscriber1, subscriber2, subscriber3, subscriber4, subscriber5, subscriber6, subscriber7])
 
 
@@ -54,4 +54,3 @@ def populate(agency: Agency):
 
 def populate_issues(newspaper: Newspaper):
     create_issues(newspaper)
-

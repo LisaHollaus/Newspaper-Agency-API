@@ -248,6 +248,7 @@ def test_post_update_issue_with_unknown_issue(client, agency):
     # test status code
     assert response.status_code == 404  # not found
 
+
 def test_delete_issue(client, agency):
     # arrange
     paper = agency.get_newspaper(100)  # using testdata

@@ -146,7 +146,7 @@ class Agency(object):
     def all_editors(self):
         return self.editors
 
-    def get_editor(self, editor_id: Union[int,str]) -> Optional[Editor]:
+    def get_editor(self, editor_id: int):
         for editor in self.editors:
             if editor.ID == editor_id:
                 return editor
@@ -170,7 +170,6 @@ class Agency(object):
                         new_editor.issues_list.append(issue)  # transferring issues of the deleted editor to another editor
                         break
 
-
     def get_editor_issues(self, editor: Editor):
         return editor.issues_list
 
@@ -187,7 +186,7 @@ class Agency(object):
     def all_subscribers(self) -> List[Subscriber]:
         return self.subscribers
 
-    def get_subscriber(self, subscriber_id: Union[int,str]) -> Optional[Subscriber]:
+    def get_subscriber(self, subscriber_id: int):
         for subscriber in self.subscribers:
             if subscriber.ID == subscriber_id:
                 return subscriber

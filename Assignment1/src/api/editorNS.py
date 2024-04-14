@@ -82,5 +82,3 @@ class EditorIssues(Resource):
             abort(404, f"Editor with ID {editor_id} was not found")
         issues = Agency.get_instance().get_editor_issues(targeted_editor)
         return issues
-
-

@@ -2,7 +2,6 @@ from flask import jsonify
 from flask_restx import Namespace, reqparse, Resource, fields, abort
 
 from ..model.agency import Agency
-from ..model.newspaper import Newspaper
 from ..model.subscriber import Subscriber
 
 subscriber_ns = Namespace("subscriber", description="Subscriber related operations")
@@ -111,4 +110,3 @@ class SubscriberIDMissingIssues(Resource):
             abort(404, f"Subscriber with ID {subscriber_id} was not found")
         missing = Agency.get_instance().check_missingissues(subscriber)
         return jsonify(missing)
-
